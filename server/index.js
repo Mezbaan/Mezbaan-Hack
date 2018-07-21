@@ -13,11 +13,11 @@ const rentalsRoutes = require("./routes/rentals"),
 
 const url = config.DB_URI;
 
-mongoose.connect(url).then(() => {
-  if (process.env.NODE_ENV != 'production') {
-    // fakeDB.seed();
-  }
-});
+// mongoose.connect(url).then(() => {
+//   if (process.env.NODE_ENV != 'production') {
+//     // fakeDB.seed();
+//   }
+// });
 
 app.use(bodyParser.json()); // use od body parser to get values from get req
 
