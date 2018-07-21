@@ -24,6 +24,4 @@ yarn-error.log*
 /src/**/*.css
 /src/App.css
 
-/server/config/dev.js
-
 notes.txt
