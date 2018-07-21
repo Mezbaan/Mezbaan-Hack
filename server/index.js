@@ -1,11 +1,11 @@
 const express       = require("express"),
       app           = express(),
       bodyParser    = require("body-parser"),
-      mongoose      = require("mongoose"),
       config        = require("./config"),
       fakeDB        = require("./seed-db"),
       Rental        = require("./models/rental"),
       path          = require("path");
+      firebase      = require("firebase");
 
 const rentalsRoutes = require("./routes/rentals"),
       bookingRoutes = require("./routes/bookings"),
@@ -25,6 +25,8 @@ app.use("/api/v1/", authRoutes);
 app.use("/api/v1/rentals", rentalsRoutes);
 app.use("/api/v1/bookings", bookingRoutes);
 
+firebase.initializeApp(config);
+console.log(firebase.app().name);
 
 if (process.env.NODE_ENV == 'production') {
   const appPath = path.join(__dirname, "..", "build");
